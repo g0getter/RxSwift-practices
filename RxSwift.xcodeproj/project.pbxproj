@@ -14,9 +14,14 @@
 		BBC1FD3326AC07DE00088491 /* RxSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBC1FD3126AC07DE00088491 /* RxSwift.xcdatamodeld */; };
 		BBC1FD3526AC07E000088491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC1FD3426AC07E000088491 /* Assets.xcassets */; };
 		BBC1FD3826AC07E000088491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC1FD3626AC07E000088491 /* LaunchScreen.storyboard */; };
+		BBE6239726AC0B10002D5AB1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6239626AC0B10002D5AB1 /* MainViewController.swift */; };
+		D2E7E8AF4ACA7902F899BC1C /* Pods_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549C5461E94B8750B1E906E1 /* Pods_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		549C5461E94B8750B1E906E1 /* Pods_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C64F2B8FFDB8565BF17BD88 /* Pods-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift/Pods-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		82BF75EACF41902F3895CFA6 /* Pods-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift.release.xcconfig"; path = "Target Support Files/Pods-RxSwift/Pods-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		BBC1FD2526AC07DE00088491 /* RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC1FD2826AC07DE00088491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBC1FD2A26AC07DE00088491 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		BBC1FD3426AC07E000088491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBC1FD3726AC07E000088491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBC1FD3926AC07E000088491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE6239626AC0B10002D5AB1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E7E8AF4ACA7902F899BC1C /* Pods_RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06F596BAD862E6BF8AE0176F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				549C5461E94B8750B1E906E1 /* Pods_RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BBC1FD1C26AC07DE00088491 = {
 			isa = PBXGroup;
 			children = (
 				BBC1FD2726AC07DE00088491 /* RxSwift */,
 				BBC1FD2626AC07DE00088491 /* Products */,
+				CBCE550D05D9DA78108C7D75 /* Pods */,
+				06F596BAD862E6BF8AE0176F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +75,58 @@
 		BBC1FD2726AC07DE00088491 /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				BBE6239826AC0E6A002D5AB1 /* API */,
+				BBE6239426AC0AB9002D5AB1 /* Models */,
+				BBE6239326AC0AB3002D5AB1 /* ViewModels */,
+				BBE6239226AC0AA9002D5AB1 /* Views */,
 				BBC1FD2826AC07DE00088491 /* AppDelegate.swift */,
+				BBC1FD2E26AC07DE00088491 /* Main.storyboard */,
 				BBC1FD2A26AC07DE00088491 /* SceneDelegate.swift */,
 				BBC1FD2C26AC07DE00088491 /* ViewController.swift */,
-				BBC1FD2E26AC07DE00088491 /* Main.storyboard */,
 				BBC1FD3426AC07E000088491 /* Assets.xcassets */,
 				BBC1FD3626AC07E000088491 /* LaunchScreen.storyboard */,
 				BBC1FD3926AC07E000088491 /* Info.plist */,
 				BBC1FD3126AC07DE00088491 /* RxSwift.xcdatamodeld */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		BBE6239226AC0AA9002D5AB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBE6239626AC0B10002D5AB1 /* MainViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBE6239326AC0AB3002D5AB1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BBE6239426AC0AB9002D5AB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBE6239826AC0E6A002D5AB1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CBCE550D05D9DA78108C7D75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C64F2B8FFDB8565BF17BD88 /* Pods-RxSwift.debug.xcconfig */,
+				82BF75EACF41902F3895CFA6 /* Pods-RxSwift.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +136,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBC1FD3C26AC07E000088491 /* Build configuration list for PBXNativeTarget "RxSwift" */;
 			buildPhases = (
+				ECC3E6F72F4F2EAA7E66C36D /* [CP] Check Pods Manifest.lock */,
 				BBC1FD2126AC07DE00088491 /* Sources */,
 				BBC1FD2226AC07DE00088491 /* Frameworks */,
 				BBC1FD2326AC07DE00088491 /* Resources */,
@@ -135,6 +195,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ECC3E6F72F4F2EAA7E66C36D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBC1FD2126AC07DE00088491 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +229,7 @@
 				BBC1FD2926AC07DE00088491 /* AppDelegate.swift in Sources */,
 				BBC1FD2B26AC07DE00088491 /* SceneDelegate.swift in Sources */,
 				BBC1FD3326AC07DE00088491 /* RxSwift.xcdatamodeld in Sources */,
+				BBE6239726AC0B10002D5AB1 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +373,7 @@
 		};
 		BBC1FD3D26AC07E000088491 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C64F2B8FFDB8565BF17BD88 /* Pods-RxSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,6 +392,7 @@
 		};
 		BBC1FD3E26AC07E000088491 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82BF75EACF41902F3895CFA6 /* Pods-RxSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
