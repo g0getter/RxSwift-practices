@@ -6,5 +6,6 @@ target 'RxSwift' do
   use_frameworks!
 
   # Pods for RxSwift
-
+  pod 'Kingfisher'
+  pod 'RxSwift'
 end

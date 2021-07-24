@@ -140,6 +140,7 @@
 				BBC1FD2126AC07DE00088491 /* Sources */,
 				BBC1FD2226AC07DE00088491 /* Frameworks */,
 				BBC1FD2326AC07DE00088491 /* Resources */,
+				ABD7A087698829A8B148BB45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +197,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		ABD7A087698829A8B148BB45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwift/Pods-RxSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwift/Pods-RxSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwift/Pods-RxSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ECC3E6F72F4F2EAA7E66C36D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
