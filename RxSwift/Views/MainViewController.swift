@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainViewController: UIViewController {
 
@@ -16,7 +17,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUI()
+    }
+    
+    func setUI() {
         apiButton.setTitle("Send a request", for: .normal)
         apiButton.setTitle("Wanna send", for: .highlighted)
         apiButton.setTitleColor(.gray, for: .highlighted)
@@ -25,6 +29,16 @@ class MainViewController: UIViewController {
     
     @objc func sendAPIRequest() {
         responseTextView.text = "Sending"
+        
+        // Set ImageView with Kingfisher
+        // TODO: Replace url_mockup with real image url
+        let url_mockup = "https://lumiere-a.akamaihd.net/v1/images/image_b97b56f3.jpeg?region=0%2C0%2C540%2C810"
+        
+        // Image view
+        marvelImage.kf.setImage(
+            with: URL(string: url_mockup),
+            placeholder: UIImage(named: "black_widow")
+        )
     }
     
 
