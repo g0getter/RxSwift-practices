@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RxSwift.xcodeproj">
+      location = "group:/Users/aiden/GitHub/RxSwift-practices/RxSwiftPractices.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RxSwiftPractices.xcodeproj">
    </FileRef>
 </Workspace>

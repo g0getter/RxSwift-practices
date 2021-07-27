@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BBC1FD2426AC07DE00088491"
-               BuildableName = "RxSwift.app"
-               BlueprintName = "RxSwift"
-               ReferencedContainer = "container:RxSwift.xcodeproj">
+               BuildableName = "RxSwiftPractices.app"
+               BlueprintName = "RxSwiftPractices"
+               ReferencedContainer = "container:RxSwiftPractices.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBC1FD2426AC07DE00088491"
-            BuildableName = "RxSwift.app"
-            BlueprintName = "RxSwift"
-            ReferencedContainer = "container:RxSwift.xcodeproj">
+            BuildableName = "RxSwiftPractices.app"
+            BlueprintName = "RxSwiftPractices"
+            ReferencedContainer = "container:RxSwiftPractices.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBC1FD2426AC07DE00088491"
-            BuildableName = "RxSwift.app"
-            BlueprintName = "RxSwift"
-            ReferencedContainer = "container:RxSwift.xcodeproj">
+            BuildableName = "RxSwiftPractices.app"
+            BlueprintName = "RxSwiftPractices"
+            ReferencedContainer = "container:RxSwiftPractices.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
