@@ -14,6 +14,9 @@
 		BBC1FD3326AC07DE00088491 /* RxSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBC1FD3126AC07DE00088491 /* RxSwift.xcdatamodeld */; };
 		BBC1FD3526AC07E000088491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC1FD3426AC07E000088491 /* Assets.xcassets */; };
 		BBC1FD3826AC07E000088491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC1FD3626AC07E000088491 /* LaunchScreen.storyboard */; };
+		BBE1634226B048E4004FE42E /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634126B048E4004FE42E /* MarvelCharacter.swift */; };
+		BBE1634426B04D6C004FE42E /* SendingRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634326B04D6C004FE42E /* SendingRequestModel.swift */; };
+		BBE1634726B04EAB004FE42E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634626B04EAB004FE42E /* MainViewModel.swift */; };
 		BBE6239726AC0B10002D5AB1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6239626AC0B10002D5AB1 /* MainViewController.swift */; };
 		C0FF61680E4FF165175E3B24 /* Pods_RxSwiftPractices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07932675CB98642B8F408B68 /* Pods_RxSwiftPractices.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,9 @@
 		BBC1FD3426AC07E000088491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBC1FD3726AC07E000088491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBC1FD3926AC07E000088491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE1634126B048E4004FE42E /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
+		BBE1634326B04D6C004FE42E /* SendingRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingRequestModel.swift; sourceTree = "<group>"; };
+		BBE1634626B04EAB004FE42E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BBE6239626AC0B10002D5AB1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,9 +83,8 @@
 		BBC1FD2726AC07DE00088491 /* RxSwiftPractices */ = {
 			isa = PBXGroup;
 			children = (
-				BBE6239826AC0E6A002D5AB1 /* API */,
-				BBE6239426AC0AB9002D5AB1 /* Models */,
-				BBE6239326AC0AB3002D5AB1 /* ViewModels */,
+				BBE1634526B04E8E004FE42E /* ViewModels */,
+				BBE1634026B048D2004FE42E /* Models */,
 				BBE6239226AC0AA9002D5AB1 /* Views */,
 				BBC1FD2826AC07DE00088491 /* AppDelegate.swift */,
 				BBC1FD2E26AC07DE00088491 /* Main.storyboard */,
@@ -93,33 +98,29 @@
 			path = RxSwiftPractices;
 			sourceTree = "<group>";
 		};
+		BBE1634026B048D2004FE42E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBE1634126B048E4004FE42E /* MarvelCharacter.swift */,
+				BBE1634326B04D6C004FE42E /* SendingRequestModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBE1634526B04E8E004FE42E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBE1634626B04EAB004FE42E /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		BBE6239226AC0AA9002D5AB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BBE6239626AC0B10002D5AB1 /* MainViewController.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BBE6239326AC0AB3002D5AB1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		BBE6239426AC0AB9002D5AB1 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BBE6239826AC0E6A002D5AB1 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		CBCE550D05D9DA78108C7D75 /* Pods */ = {
@@ -249,9 +250,12 @@
 			files = (
 				BBC1FD2D26AC07DE00088491 /* ViewController.swift in Sources */,
 				BBC1FD2926AC07DE00088491 /* AppDelegate.swift in Sources */,
+				BBE1634226B048E4004FE42E /* MarvelCharacter.swift in Sources */,
 				BBC1FD2B26AC07DE00088491 /* SceneDelegate.swift in Sources */,
 				BBC1FD3326AC07DE00088491 /* RxSwift.xcdatamodeld in Sources */,
 				BBE6239726AC0B10002D5AB1 /* MainViewController.swift in Sources */,
+				BBE1634426B04D6C004FE42E /* SendingRequestModel.swift in Sources */,
+				BBE1634726B04EAB004FE42E /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

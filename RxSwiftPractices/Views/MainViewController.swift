@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         setUI()
+        bindViewModel()
     }
     
     func setUI() {
@@ -26,6 +28,11 @@ class MainViewController: UIViewController {
         apiButton.setTitle("Wanna send", for: .highlighted)
         apiButton.setTitleColor(.gray, for: .highlighted)
         apiButton.addTarget(self, action: #selector(sendAPIRequest), for: .touchUpInside)
+    }
+    
+    // TODO: 추가 작업
+    func bindViewModel() {
+        self.apiButton.rx.tap.asDriver().drive().disposed(by: DisposeBag())
     }
     
     @objc func sendAPIRequest() {
