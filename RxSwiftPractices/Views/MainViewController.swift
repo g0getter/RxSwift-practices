@@ -32,7 +32,9 @@ class MainViewController: UIViewController {
     
     // TODO: 추가 작업
     func bindViewModel() {
-        self.apiButton.rx.tap.asDriver().drive().disposed(by: DisposeBag())
+        self.apiButton.rx.tap.asDriver().drive(onNext: {
+            print("qwertyuio")
+        }).disposed(by: DisposeBag())
     }
     
     @objc func sendAPIRequest() {
