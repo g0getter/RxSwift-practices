@@ -7,6 +7,11 @@ target 'RxSwiftPractices' do
 
   # Pods for RxSwiftPractices
   pod 'Kingfisher'
-  pod 'RxSwift'
-  pod 'RxCocoa'
+#  pod 'RxSwift'
+#  pod 'RxCocoa'
+#  pod 'Moya'
+#  pod 'Moya/RxSwift'
+  pod 'RxCocoa',    '~> 5'
+  pod 'Moya/RxSwift', '~> 14.0'
+  pod 'RxSwift',    '~> 5'
 end

@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     
     // TODO: 추가 작업
     func bindViewModel() {
+        // TODO: .drive()의 쓰임
         self.apiButton.rx.tap.asDriver().drive(onNext: {
             print("qwertyuio")
         }).disposed(by: DisposeBag())
