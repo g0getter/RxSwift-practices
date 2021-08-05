@@ -10,6 +10,8 @@ import CryptoKit
 import CommonCrypto
 import Moya
 
+// TODO: limit 1
+
 enum MarvelTargetType {
     case character
     
@@ -24,7 +26,7 @@ extension MarvelTargetType: TargetType {
     
     var path: String {
         switch self {
-        case .character: return "/comics"
+        case .character: return "/characters"
         }
     }
     
@@ -58,4 +60,5 @@ extension MarvelTargetType: TargetType {
     }
 }
 
-let provider = MoyaProvider<MarvelTargetType>()
+// TODO: 위치 맞는지 확인(Provider or ViewModel)
+let marvelProvider = MoyaProvider<MarvelTargetType>()

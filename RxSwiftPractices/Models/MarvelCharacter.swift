@@ -7,6 +7,9 @@
 
 import Foundation
 
+// TODO: Optional 설정
+// Codable + init()으로 변조
+// json parsing plugin - 찾아보기
 struct CharacterDataWrapper: Codable {
     var data: CharacterDataContainer
 }
@@ -22,6 +25,7 @@ struct MarvelCharacter: Codable {
 
 struct ImagePath: Codable {
     var path: String
+    var `extension`: String
 }
 
 // TODO: 적절한 위치 찾기
