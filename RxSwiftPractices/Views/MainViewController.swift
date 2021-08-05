@@ -50,6 +50,8 @@ class MainViewController: UIViewController {
             with: URL(string: url_mockup),
             placeholder: UIImage(named: "black_widow")
         )
+        // TODO: ViewController의 ViewModel 없애기
+        MainViewModel().requestMarvelAPI()
     }
     
 

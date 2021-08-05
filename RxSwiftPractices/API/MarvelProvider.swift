@@ -19,7 +19,7 @@ enum MarvelTargetType {
 }
 extension MarvelTargetType: TargetType {
     var baseURL: URL {
-        return URL(string: "")!
+        return URL(string: "https://gateway.marvel.com/v1/public")!
     }
     
     var path: String {

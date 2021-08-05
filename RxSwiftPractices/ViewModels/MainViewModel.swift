@@ -70,11 +70,14 @@ final class MainViewModel: MainViewModelOutput {
     // TODO: try - catch(Json decode 실패 시 처리) + 발생하는 익셉션 종류별 처리(parsing 안되는 경우)
     // 알아보기: Moya - objectMap으로 .error 처럼 처리 가능
     func parse(json: Data) {
-//        if let jsonComics = try? JSONDecoder().decode(ResponseBody.self, from: json) {
-//            comics = jsonComics.data.results
-//            print("Title: \(comics.last?.title ?? "")")
-//            print("Thumbnail path: \(comics.last?.thumbnail.path ?? "")")
-//        }
+        // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
+        // TODO: Optional 처리
+        var characters: [MarvelCharacter]?
+        if let jsonCharacter = try? JSONDecoder().decode(CharacterDataWrapper.self, from: json) {
+            characters = jsonCharacter.data.results
+            print("Title: \(characters?.last?.name ?? "")")
+            print("Thumbnail path: \(characters?.last?.thumbnail.path ?? "")")
+        }
     }
 
 }
