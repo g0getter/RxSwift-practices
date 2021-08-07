@@ -10,6 +10,11 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
+// TODO: 버튼 눌렀을 때 placeholder --> url 받으면 설정하도록
+// (문제1) .setImage를 두 번 하고 싶지 않음
+// (문제2) 하나의 변수로 설정하면, 해당 변수를 구독하지 않으면 값이 바뀌었을 때 자동으로 로드되지 않음
+// --> class 안에 String type의 url 변수를 하나 설정하고 구독하는 게 가장 좋은 방법인가?
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var marvelImage: UIImageView!
@@ -38,7 +43,7 @@ class MainViewController: UIViewController {
         apiButton.setTitle("Wanna send", for: .highlighted)
         apiButton.setTitleColor(.gray, for: .highlighted)
         // TODO: rx.tap.asDriver().drive() { ///(처리) }
-        apiButton.addTarget(self, action: #selector(sendAPIRequest), for: .touchUpInside)
+//        apiButton.addTarget(self, action: #selector(sendAPIRequest), for: .touchUpInside)
         // TODO: add - remove 처리( || clear)
 //        apiButton.removeTarget(<#T##target: Any?##Any?#>, action: <#T##Selector?#>, for: <#T##UIControl.Event#>)
     }
@@ -49,10 +54,11 @@ class MainViewController: UIViewController {
 //        let observable: Observable<Bool> = Observable.just(true)
 //        observable.bind(to: apiButton.rx.isEnabled).disposed(by: disposeBag)
         
-        // Q. DisposeBag() 함수 내 로컬 변수로? or class?
+        // Q. DisposeBag() 함수 내 로컬 변수로? or class? >> DisposeBag 역할 공부하기
         // TODO: .drive()의 쓰임
         self.apiButton.rx.tap.asDriver().drive(onNext: {
             print("qwertyuio")
+            self.sendAPIRequest()
         }).disposed(by: disposeBag)
         // TODO: bind vs. drive vs. subscribe
         // TODO: [weak self] 의미
@@ -60,20 +66,28 @@ class MainViewController: UIViewController {
         mainViewModel.outputs.mainViewOutput.bind { [weak self] character in
             guard let self = self else { return }
             // TODO: placeholder 두고 image url만 새로 설정하는 법
-            let url = character.thumbnail.path + "."+character.thumbnail.extension
+            let url = character.thumbnail.path + "." + character.thumbnail.extension
             self.marvelImage.kf.setImage(with: URL(string: url))
+            // 여기서 placeholder를 지정하는 건 의미가 없어보임(육안으로는 교체되는 게 보이지 않음)
+//            self.marvelImage.kf.setImage(
+//                with: URL(string: self.url_mockup),
+//                placeholder: UIImage(named: "black_widow")
+//            )
         }.disposed(by: disposeBag)
         
-        mainViewModel.outputs.mainViewOutput.asObservable()
+        // !. response 사용하는데 왜 'Result of call to 'bind(onNext:)' is unused' warning 뜨는지? >> dispose 하지 않아서.
+        mainViewModel.outputs.mainTextOutput.bind { [weak self] response in
+            guard let self = self else { return }
+            self.responseTextView.text = response
+        }.disposed(by: disposeBag)
     }
     
-    @objc func sendAPIRequest() {
-        responseTextView.text = "Sending"
+    func sendAPIRequest() {
+        responseTextView.text = "Sending.."
         
-        // Set ImageView with Kingfisher
-        // TODO: Replace url_mockup with real image url
         let url_mockup = "https://lumiere-a.akamaihd.net/v1/images/image_b97b56f3.jpeg?region=0%2C0%2C540%2C810"
         
+        // Set ImageView with Kingfisher
         // Image view
         marvelImage.kf.setImage(
             with: URL(string: url_mockup),

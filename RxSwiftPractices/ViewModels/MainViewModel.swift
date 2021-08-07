@@ -18,6 +18,7 @@ import Kingfisher
 protocol MainViewModelOutput {
     // TODO: naming - output for what?
     var mainViewOutput: PublishSubject<MarvelCharacter> { get }
+    var mainTextOutput: PublishSubject<String> { get }
 }
 
 protocol MainNetworkViewModelType {
@@ -30,6 +31,7 @@ protocol MainNetworkViewModelType {
 final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
     // TODO: 상수별 let/var 결정
     var mainViewOutput: PublishSubject<MarvelCharacter> = PublishSubject<MarvelCharacter>()
+    var mainTextOutput: PublishSubject<String> = PublishSubject<String>()
     
     var outputs: MainViewModelOutput { return self }
     
@@ -61,6 +63,7 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
                     // if let, guard let
                     // 가독성(길이)
                     self.outputs.mainViewOutput.on(.next(marvelChar.first ?? MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: "")))) // 하나만 넘김!
+                    self.outputs.mainTextOutput.on(.next(String(decoding: response.data, as: UTF8.self)))
                 }
             case .error(let error):
                 print(error.localizedDescription)
