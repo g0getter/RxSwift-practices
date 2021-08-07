@@ -16,7 +16,7 @@ struct SendingRequestModel {
         return Observable.create { (observer) -> Disposable in
             
             if id != "" {
-                observer.onNext(.success(MarvelCharacter(name: id, thumbnail: ImagePath(path: ""))))
+                observer.onNext(.success(MarvelCharacter(name: id, thumbnail: ImagePath(path: "", extension: ""))))
             } else {
                 observer.onNext(.failure(.defaultError))
             }
