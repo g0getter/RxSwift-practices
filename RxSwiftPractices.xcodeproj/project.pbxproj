@@ -223,7 +223,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftPractices/Pods-RxSwiftPractices-frameworks.sh\"\n\n# TODO, FIXME를 warning으로 인식\nTAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftPractices/Pods-RxSwiftPractices-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E8458875BF7A25550D7A4E1 /* [CP] Check Pods Manifest.lock */ = {

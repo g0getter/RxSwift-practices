@@ -13,15 +13,16 @@ import Moya
 import UIKit
 import Kingfisher
 
-// TODO: private --> 필요하면 private 빼기
+// ✅TODO: private --> 필요하면 private 빼기
 // 접근제어자 - 빌드 시간에도 영향.
+// private 하면 안됨.
 protocol MainViewModelOutput {
     // TODO: naming - output for what?
     var mainViewOutput: PublishSubject<MarvelCharacter> { get }
     var mainTextOutput: PublishSubject<String> { get }
 }
 
-protocol MainNetworkViewModelType {
+private protocol MainNetworkViewModelType {
 //    var inputs: Account1WonNetworkViewModelInput {get}
     var outputs: MainViewModelOutput {get}
 }
@@ -76,6 +77,7 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
     // 알아보기: Moya - objectMap으로 .error 처럼 처리 가능
     func parse(json: Data) -> [MarvelCharacter]? {
         // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
+        // --> limit=1로 수정하기
         // TODO: Optional 처리
         var characters: [MarvelCharacter]?
         if let jsonCharacter = try? JSONDecoder().decode(CharacterDataWrapper.self, from: json) {

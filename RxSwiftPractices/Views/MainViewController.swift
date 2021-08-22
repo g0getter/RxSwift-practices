@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
     // TODO: 위치. 함수별 로컬로?
     // View가 사라질 때 연결된 것들은 사라짐
     // view 따로 만들어서 API 호출 -> disposeBag 이후 호출 중단되는지.
-    // TODO: DisposeBag 공부 + ViewModel에만 DisposeBag 넣기
+    // (✅)🤔TODO: DisposeBag 공부 + ViewModel에만 DisposeBag 넣기
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
