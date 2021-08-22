@@ -22,7 +22,7 @@ protocol MainViewModelOutput {
     var mainTextOutput: PublishSubject<String> { get }
 }
 
-private protocol MainNetworkViewModelType {
+protocol MainNetworkViewModelType {
 //    var inputs: Account1WonNetworkViewModelInput {get}
     var outputs: MainViewModelOutput {get}
 }
