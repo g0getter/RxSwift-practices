@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
         }).disposed(by: disposeBag)
         // TODO: bind vs. drive vs. subscribe
         // ✅TODO: [weak self] 의미? 강한 순환 참조 막기 위함(메모리 해제 위해)
-        mainViewModel.outputs.mainViewOutput.bind { [weak self] character in
+        mainViewModel.outputs.mainViewCharacterOutput.bind { [weak self] character in
             guard let self = self else { return }
             // TODO: placeholder 두고 image url만 새로 설정하는 법
             let url = character.thumbnail.path + "." + character.thumbnail.extension

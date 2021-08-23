@@ -17,13 +17,12 @@ import Kingfisher
 // 접근제어자 - 빌드 시간에도 영향.
 // private 하면 안됨.
 protocol MainViewModelOutput {
-    // TODO: naming - output for what?
-    var mainViewOutput: PublishSubject<MarvelCharacter> { get }
+    // ✅TODO: naming - output for Character
+    var mainViewCharacterOutput: PublishSubject<MarvelCharacter> { get }
     var mainTextOutput: PublishSubject<String> { get }
 }
 
 protocol MainNetworkViewModelType {
-//    var inputs: Account1WonNetworkViewModelInput {get}
     var outputs: MainViewModelOutput {get}
 }
 
@@ -31,7 +30,7 @@ protocol MainNetworkViewModelType {
 // TODO: I/O protocol 만들고 구현
 final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
     // TODO: 상수별 let/var 결정
-    var mainViewOutput: PublishSubject<MarvelCharacter> = PublishSubject<MarvelCharacter>()
+    var mainViewCharacterOutput: PublishSubject<MarvelCharacter> = PublishSubject<MarvelCharacter>()
     var mainTextOutput: PublishSubject<String> = PublishSubject<String>()
     
     var outputs: MainViewModelOutput { return self }
@@ -60,11 +59,19 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
             switch event {
             case .success(let response):
                 if let marvelChar = self.parse(json: response.data) {
-                    // TODO: 예외 처리(길이 0일 떄?)
+                    // (✅)🤔TODO: 예외 처리(길이 0일 떄) <- if let 했는데 왜 marvelChar이 여전히 옵셔널인지.(! 뺄 수 없음)
                     // if let, guard let
                     // 가독성(길이)
-                    self.outputs.mainViewOutput.on(.next(marvelChar.first ?? MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: "")))) // 하나만 넘김!
+                    if marvelChar.isEmpty {
+                        self.outputs.mainViewCharacterOutput.on(.next(MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: ""))))
+                        return
+                    }
+                    self.outputs.mainViewCharacterOutput.on(.next(marvelChar.first!)) // 하나만 넘김!
                     self.outputs.mainTextOutput.on(.next(String(decoding: response.data, as: UTF8.self)))
+                } else {
+                    // Parsing 실패
+                    print("Response는 정상이나 parsing 실패")
+                    
                 }
             case .error(let error):
                 print(error.localizedDescription)
