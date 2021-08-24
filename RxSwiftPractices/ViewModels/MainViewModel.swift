@@ -29,29 +29,21 @@ protocol MainNetworkViewModelType {
 // TODO: 왜 final class?
 // TODO: I/O protocol 만들고 구현
 final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
-    // TODO: 상수별 let/var 결정
-    var mainViewCharacterOutput: PublishSubject<MarvelCharacter> = PublishSubject<MarvelCharacter>()
-    var mainTextOutput: PublishSubject<String> = PublishSubject<String>()
+    // ✅TODO: 상수별 let/var 결정
+    let mainViewCharacterOutput: PublishSubject<MarvelCharacter> = PublishSubject<MarvelCharacter>()
+    let mainTextOutput: PublishSubject<String> = PublishSubject<String>()
     
     var outputs: MainViewModelOutput { return self }
     
-    var disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     /// Button이 클릭된 시점을 전달하기 위함 (View -> ViewModel)
-    var buttonTouched = PublishRelay<Void>()
+    let buttonTouched = PublishRelay<Void>()
     
-    // TODO: Optional(result를 받는 데 실패했을 수 있으므로) 맞는지
-    /// ViewModel에서(ViewModel이 View와 통신 후) 받은 결과값을 View에 전달하기 위함 (ViewModel --> View)
-    var result: Signal<Result<MarvelCharacter, MainPageError>>?
-    
-    // TODO: 구현
+    // ✅TODO: 구현 -> 필요 없음. 왜냐면 onNext 인자로 넘겨줄 것이 없으므로.
     init() {
-//        self.buttonTouched.asObservable().bind{ [weak self] data in
-//            guard let self = self else { return }
-////            self.mainViewOutput.onNext(data)
-//        }.disposed(by: disposeBag)
-        self.buttonTouched.asObservable().bind(onNext: {}).disposed(by: disposeBag)
-        
+        self.buttonTouched.asObservable().bind{}.disposed(by: disposeBag) // 후행클로저인데 리턴값이 void
+        // 동일한 구문: self.buttonTouched.asObservable().bind(onNext: {}).disposed(by: disposeBag)
     }
     
     func requestMarvelAPI() {        
