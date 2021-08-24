@@ -44,8 +44,9 @@ extension MarvelTargetType: TargetType {
         let ts = Date()
         let stringToHash: String = "\(ts)" + MarvelTargetType.privateKey + MarvelTargetType.publicKey
         let hash = Insecure.MD5.hash(data: stringToHash.data(using: .utf8)!)
-        // TODO: 의미 알기
-        let hashHex =  hash.map { String(format: "%02hhx", $0) }.joined()
+        // ✅TODO: 의미? Convert Digest type to hex String
+        // hash의 값들을 하나씩 클로저 안에 넣어서 string을 만드는데, string의 형태는 unsigned 32-bit integer를 hex로 표현하되 숫자 2자리로 표현.
+        let hashHex = hash.hexEncodedString()
         
         return .requestParameters(parameters: ["ts":ts, "apikey": MarvelTargetType.publicKey, "hash": hashHex], encoding: URLEncoding.queryString) // TODO
     }
@@ -62,3 +63,4 @@ extension MarvelTargetType: TargetType {
 
 // (✅)🤔TODO: 위치 맞는지 확인(Provider or ViewModel)
 let marvelProvider = MoyaProvider<MarvelTargetType>()
+
