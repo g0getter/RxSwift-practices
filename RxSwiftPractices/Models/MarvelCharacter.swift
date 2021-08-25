@@ -27,18 +27,3 @@ struct ImagePath: Codable {
     var path: String
     var `extension`: String
 }
-
-// TODO: 적절한 위치 찾기
-enum MainPageError: Error {
-    case defaultError
-    case error(code: Int)
-    
-    var msg: String {
-        switch  self  {
-        case .defaultError:
-            return "ERROR"
-        case .error(let code):
-            return "\(code) Error"
-        }
-    }
-}
