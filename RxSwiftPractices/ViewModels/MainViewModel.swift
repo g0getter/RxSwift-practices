@@ -54,6 +54,7 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
                     // (✅)🤔TODO: 예외 처리(길이 0일 떄) <- if let 했는데 왜 marvelChar이 여전히 옵셔널인지.(! 뺄 수 없음)
                     // if let, guard let
                     // 가독성(길이)
+                    
                     if marvelChar.isEmpty {
                         self.outputs.mainViewCharacterOutput.on(.next(MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: ""))))
                         return
