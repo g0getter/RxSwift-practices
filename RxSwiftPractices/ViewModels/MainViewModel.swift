@@ -59,12 +59,12 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
                         self.outputs.mainViewCharacterOutput.on(.next(MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: ""))))
                         return
                     }
-                    self.outputs.mainViewCharacterOutput.on(.next(marvelChar.first!)) // 하나만 넘김!
+                    guard let firstChar = marvelChar.first else { return }
+                    self.outputs.mainViewCharacterOutput.on(.next(firstChar)) // 하나만 넘김!
                     self.outputs.mainTextOutput.on(.next(String(decoding: response.data, as: UTF8.self)))
                 } else {
                     // Parsing 실패
                     print("Response는 정상이나 parsing 실패")
-                    
                 }
             case .error(let error):
                 print(error.localizedDescription)
@@ -78,14 +78,24 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
     func parse(json: Data) -> [MarvelCharacter]? {
         // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
         // --> limit=1로 수정하기
-        // TODO: Optional 처리
+        // ✅TODO: Optional 처리
         var characters: [MarvelCharacter]?
-        if let jsonCharacter = try? JSONDecoder().decode(CharacterDataWrapper.self, from: json) {
+        do {
+            let jsonCharacter = try JSONDecoder().decode(CharacterDataWrapper.self, from: json)
             characters = jsonCharacter.data.results
             print("Title: \(characters?.last?.name ?? "")")
             print("Thumbnail path: \(characters?.last?.thumbnail.path ?? "")")
             print("Thumbnail extension: \(characters?.last?.thumbnail.extension ?? "")")
+        } catch {
+            print("\(error)")
         }
+        
+//        if let jsonCharacter = try? JSONDecoder().decode(CharacterDataWrapper.self, from: json) {
+//            characters = jsonCharacter.data.results
+//            print("Title: \(characters?.last?.name ?? "")")
+//            print("Thumbnail path: \(characters?.last?.thumbnail.path ?? "")")
+//            print("Thumbnail extension: \(characters?.last?.thumbnail.extension ?? "")")
+//        }
         return characters
     }
 }
