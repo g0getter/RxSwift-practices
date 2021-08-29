@@ -25,10 +25,10 @@ class MainViewController: UIViewController {
 //    // 일반적으로 사용하는 방식:
 //    let mainViewModel: MainNetworkViewModelType = MainViewModel()
     
-    // TODO: 위치. 함수별 로컬로?
+    // ✅TODO: 위치. 함수별 로컬로? X. ViewModel별로 class에 담아서 사용
     // View가 사라질 때 연결된 것들은 사라짐
     // view 따로 만들어서 API 호출 -> disposeBag 이후 호출 중단되는지.
-    // (✅)🤔TODO: DisposeBag 공부 + ViewModel에만 DisposeBag 넣기
+    // ✅TODO: DisposeBag 공부 + ViewModel에만 DisposeBag 넣기
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
         apiButton.setTitleColor(.gray, for: .highlighted)
         // TODO: rx.tap.asDriver().drive() { ///(처리) }
 //        apiButton.addTarget(self, action: #selector(sendAPIRequest), for: .touchUpInside)
-        // TODO: add - remove 처리( || clear)
+        // 유의: addTarget했으면 - remove 처리( || clear)
 //        apiButton.removeTarget(<#T##target: Any?##Any?#>, action: <#T##Selector?#>, for: <#T##UIControl.Event#>)
     }
     
