@@ -51,10 +51,8 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
             switch event {
             case .success(let response):
                 if let marvelChar = self.parse(json: response.data) {
-                    // (✅)🤔TODO: 예외 처리(길이 0일 떄) <- if let 했는데 왜 marvelChar이 여전히 옵셔널인지.(! 뺄 수 없음)
-                    // if let, guard let
-                    // 가독성(길이)
-                    
+                    // ✅TODO: 예외 처리(길이 0일 떄) <- if let 했는데 왜 marvelChar이 여전히 옵셔널인지? .first 자체가 optional이라서.
+                    // TODO: Empty일 때 예외처리                    
                     if marvelChar.isEmpty {
                         self.outputs.mainViewCharacterOutput.on(.next(MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: ""))))
                         return
