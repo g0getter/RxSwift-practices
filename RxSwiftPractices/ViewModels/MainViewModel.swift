@@ -73,7 +73,7 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
         .disposed(by: disposeBag)
     }
     
-    // TODO: try - catch(Json decode 실패 시 처리) + 발생하는 익셉션 종류별 처리(parsing 안되는 경우)
+    // (🤔보완할 catch 처리?)(✅)TODO: try - catch(Json decode 실패 시 처리) + 발생하는 익셉션 종류별 처리(parsing 안되는 경우)
     // 알아보기: Moya - objectMap으로 .error 처럼 처리 가능
     func parse(json: Data) -> [MarvelCharacter]? {
         // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
@@ -90,12 +90,6 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
             print("\(error)")
         }
         
-//        if let jsonCharacter = try? JSONDecoder().decode(CharacterDataWrapper.self, from: json) {
-//            characters = jsonCharacter.data.results
-//            print("Title: \(characters?.last?.name ?? "")")
-//            print("Thumbnail path: \(characters?.last?.thumbnail.path ?? "")")
-//            print("Thumbnail extension: \(characters?.last?.thumbnail.extension ?? "")")
-//        }
         return characters
     }
 }
