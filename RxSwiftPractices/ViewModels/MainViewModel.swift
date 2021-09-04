@@ -52,11 +52,8 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
             case .success(let response):
                 if let marvelChar = self.parse(json: response.data) {
                     // ✅TODO: 예외 처리(길이 0일 떄) <- if let 했는데 왜 marvelChar이 여전히 옵셔널인지? .first 자체가 optional이라서.
-                    // TODO: Empty일 때 예외처리                    
-                    if marvelChar.isEmpty {
-                        self.outputs.mainViewCharacterOutput.on(.next(MarvelCharacter(name: "ERROR", thumbnail: ImagePath(path: "", extension: ""))))
-                        return
-                    }
+                    // ✅TODO: Empty일 때 예외처리 > 그냥 return
+                    guard !marvelChar.isEmpty else { return }
                     guard let firstChar = marvelChar.first else { return }
                     self.outputs.mainViewCharacterOutput.on(.next(firstChar)) // 하나만 넘김!
                     self.outputs.mainTextOutput.on(.next(String(decoding: response.data, as: UTF8.self)))
@@ -89,5 +86,27 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
         }
         
         return characters
+    }
+    
+    func parseACharacter(json: Data) -> MarvelCharacter? {
+        // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
+        // --> limit=1로 수정하기
+        // ✅TODO: Optional 처리
+        var oneCharacter: MarvelCharacter?
+        do {
+            let jsonCharacter = try JSONDecoder().decode(CharacterDataWrapper.self, from: json)
+            oneCharacter = jsonCharacter.data.results.first
+            if jsonCharacter.data.results.count != 1 {
+                print("Received characters are plural")
+                return nil
+            }
+            print("Title: \(oneCharacter?.name ?? "")")
+            print("Thumbnail path: \(oneCharacter?.thumbnail.path ?? "")")
+            print("Thumbnail extension: \(oneCharacter?.thumbnail.extension ?? "")")
+        } catch {
+            print("\(error)")
+        }
+        
+        return oneCharacter
     }
 }

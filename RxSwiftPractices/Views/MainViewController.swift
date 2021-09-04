@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
 //        let observable: Observable<Bool> = Observable.just(true)
 //        observable.bind(to: apiButton.rx.isEnabled).disposed(by: disposeBag)
         
-        // Q. DisposeBag() 함수 내 로컬 변수로? or class? >> DisposeBag 역할 공부하기
+        // ✅Q. DisposeBag() 함수 내 로컬 변수로? or class? >> DisposeBag 역할 공부하기 > ViewModel별로 하나씩, 한 번에 dispose 위함.
         // TODO: .drive()의 쓰임
         self.apiButton.rx.tap.asDriver().drive(onNext: {
             print("qwertyuio")

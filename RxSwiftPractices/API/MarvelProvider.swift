@@ -27,7 +27,7 @@ extension MarvelTargetType: TargetType {
     var path: String {
         switch self {
         case .character: return "/characters"
-//        case .character: return "/characters?limit=1" // 🤔왜 안되지. response code부터 404
+//        case .character: return "/characters?limit=1&" // 🤔왜 안되지. response code부터 404
         }
     }
     
