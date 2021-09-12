@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AADDDDA18522CA8BBBEAA452 /* Pods_RxSwiftPractices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F2B9C433B8FA0FD4646BE4 /* Pods_RxSwiftPractices.framework */; };
 		BBA5ABE326B69A6600E0BA5F /* MarvelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA5ABE226B69A6600E0BA5F /* MarvelProvider.swift */; };
+		BBB37C7D26EDD3900046E34A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB37C7C26EDD3900046E34A /* MainViewController.swift */; };
+		BBB37C7F26EDD9C60046E34A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB37C7E26EDD9C60046E34A /* CharactersViewController.swift */; };
 		BBC1FD2926AC07DE00088491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1FD2826AC07DE00088491 /* AppDelegate.swift */; };
 		BBC1FD2B26AC07DE00088491 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1FD2A26AC07DE00088491 /* SceneDelegate.swift */; };
 		BBC1FD2D26AC07DE00088491 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1FD2C26AC07DE00088491 /* ViewController.swift */; };
@@ -20,7 +22,7 @@
 		BBDE8F2026D52151006B3407 /* DigestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8F1F26D52151006B3407 /* DigestExtension.swift */; };
 		BBE1634226B048E4004FE42E /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634126B048E4004FE42E /* MarvelCharacter.swift */; };
 		BBE1634726B04EAB004FE42E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634626B04EAB004FE42E /* MainViewModel.swift */; };
-		BBE6239726AC0B10002D5AB1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6239626AC0B10002D5AB1 /* MainViewController.swift */; };
+		BBE6239726AC0B10002D5AB1 /* OneCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6239626AC0B10002D5AB1 /* OneCharacterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		31E02F60B8FEB09C9C2DA086 /* Pods-RxSwiftPractices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractices.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractices/Pods-RxSwiftPractices.release.xcconfig"; sourceTree = "<group>"; };
 		67F2B9C433B8FA0FD4646BE4 /* Pods_RxSwiftPractices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPractices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA5ABE226B69A6600E0BA5F /* MarvelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelProvider.swift; sourceTree = "<group>"; };
+		BBB37C7C26EDD3900046E34A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BBB37C7E26EDD9C60046E34A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		BBC1FD2526AC07DE00088491 /* RxSwiftPractices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPractices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC1FD2826AC07DE00088491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBC1FD2A26AC07DE00088491 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +45,7 @@
 		BBDE8F1F26D52151006B3407 /* DigestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigestExtension.swift; sourceTree = "<group>"; };
 		BBE1634126B048E4004FE42E /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
 		BBE1634626B04EAB004FE42E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		BBE6239626AC0B10002D5AB1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BBE6239626AC0B10002D5AB1 /* OneCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +142,9 @@
 		BBE6239226AC0AA9002D5AB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BBE6239626AC0B10002D5AB1 /* MainViewController.swift */,
+				BBB37C7C26EDD3900046E34A /* MainViewController.swift */,
+				BBE6239626AC0B10002D5AB1 /* OneCharacterViewController.swift */,
+				BBB37C7E26EDD9C60046E34A /* CharactersViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,13 +273,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC1FD2D26AC07DE00088491 /* ViewController.swift in Sources */,
+				BBB37C7D26EDD3900046E34A /* MainViewController.swift in Sources */,
 				BBC1FD2926AC07DE00088491 /* AppDelegate.swift in Sources */,
 				BBDE8F2026D52151006B3407 /* DigestExtension.swift in Sources */,
 				BBE1634226B048E4004FE42E /* MarvelCharacter.swift in Sources */,
 				BBA5ABE326B69A6600E0BA5F /* MarvelProvider.swift in Sources */,
 				BBC1FD2B26AC07DE00088491 /* SceneDelegate.swift in Sources */,
 				BBC1FD3326AC07DE00088491 /* RxSwift.xcdatamodeld in Sources */,
-				BBE6239726AC0B10002D5AB1 /* MainViewController.swift in Sources */,
+				BBB37C7F26EDD9C60046E34A /* CharactersViewController.swift in Sources */,
+				BBE6239726AC0B10002D5AB1 /* OneCharacterViewController.swift in Sources */,
 				BBE1634726B04EAB004FE42E /* MainViewModel.swift in Sources */,
 				BBDE8F1E26D5213A006B3407 /* DataExtension.swift in Sources */,
 			);
