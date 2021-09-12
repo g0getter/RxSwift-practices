@@ -50,12 +50,9 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
         marvelProvider.rx.request(.character).subscribe { (event) in
             switch event {
             case .success(let response):
-                if let marvelChar = self.parse(json: response.data) {
-                    // ✅TODO: 예외 처리(길이 0일 떄) <- if let 했는데 왜 marvelChar이 여전히 옵셔널인지? .first 자체가 optional이라서.
-                    // ✅TODO: Empty일 때 예외처리 > 그냥 return
-                    guard !marvelChar.isEmpty else { return }
-                    guard let firstChar = marvelChar.first else { return }
-                    self.outputs.mainViewCharacterOutput.on(.next(firstChar)) // 하나만 넘김!
+                // response가 character 한 개일 경우
+                if let marvelChar = self.parseACharacter(json: response.data) {
+                    self.outputs.mainViewCharacterOutput.on(.next(marvelChar))
                     self.outputs.mainTextOutput.on(.next(String(decoding: response.data, as: UTF8.self)))
                 } else {
                     // Parsing 실패
@@ -70,9 +67,8 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
     
     // (🤔보완할 catch 처리?)(✅)TODO: try - catch(Json decode 실패 시 처리) + 발생하는 익셉션 종류별 처리(parsing 안되는 경우)
     // 알아보기: Moya - objectMap으로 .error 처럼 처리 가능
+    /// `json`이 character 여러 개일 경우 사용하는 parser
     func parse(json: Data) -> [MarvelCharacter]? {
-        // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
-        // --> limit=1로 수정하기
         // ✅TODO: Optional 처리
         var characters: [MarvelCharacter]?
         do {
@@ -88,8 +84,9 @@ final class MainViewModel: MainViewModelOutput, MainNetworkViewModelType {
         return characters
     }
     
+    /// `json`이 character 하나일 경우 사용하는 parser
     func parseACharacter(json: Data) -> MarvelCharacter? {
-        // TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 or 배열로 받고 .first
+        // ✅TODO: 하나 뽑는 걸 어디서 뽑을 지. 받을 때 .first 해서 parser에서 하나인 것 반환
         // --> limit=1로 수정하기
         // ✅TODO: Optional 처리
         var oneCharacter: MarvelCharacter?

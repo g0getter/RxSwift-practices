@@ -10,10 +10,10 @@ import CryptoKit
 import CommonCrypto
 import Moya
 
-// TODO: limit 1
+// ✅TODO: limit 1
 
 enum MarvelTargetType {
-    case character
+    case character // dictionary 받아서 task에는 덩어리째로 넣기
     
     static private let publicKey = "3c4dcb91653adab861890dee461e955f"
     static private let privateKey = "f0e43ec4a198e99634388c129739ca605ac217b9"
@@ -26,8 +26,7 @@ extension MarvelTargetType: TargetType {
     
     var path: String {
         switch self {
-        case .character: return "/characters"
-//        case .character: return "/characters?limit=1&" // 🤔왜 안되지. response code부터 404
+        case .character: return "/characters" // ✅여기에 limit=1 넣으면 response code 404 뜸.
         }
     }
     
@@ -49,7 +48,10 @@ extension MarvelTargetType: TargetType {
         // hash의 값들을 하나씩 클로저 안에 넣어서 string을 만드는데, string의 형태는 unsigned 32-bit integer를 hex로 표현하되 숫자 2자리로 표현.
         let hashHex = hash.hexEncodedString()
         
-        return .requestParameters(parameters: ["ts":ts, "apikey": MarvelTargetType.publicKey, "hash": hashHex], encoding: URLEncoding.queryString) // TODO
+        // .requestParameters에 넣어야 함. 말 그대로 request할 때 넣는 parameter.
+        return .requestParameters(parameters: ["ts":ts, "apikey": MarvelTargetType.publicKey, "hash": hashHex, "limit": "1"], encoding: URLEncoding.queryString) // TODO
+        // method가 POST이면 encoding 다르게
+        // TASK 들어가서 보기
     }
     
     var headers: [String : String]? {
