@@ -14,4 +14,5 @@ target 'RxSwiftPractices' do
   pod 'RxCocoa',    '~> 5'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'RxSwift',    '~> 5'
+  pod 'SnapKit'
 end
