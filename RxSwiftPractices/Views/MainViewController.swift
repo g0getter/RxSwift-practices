@@ -27,5 +27,10 @@ class MainViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
         
+        goToCharacterColecciones.rx.tap.asDriver().drive(onNext: {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "indexedScroll") as? IndexedScrollViewController else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }).disposed(by: disposeBag)
+        
     }
 }

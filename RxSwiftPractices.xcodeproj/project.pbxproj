@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56AAACC263E7457353782DC8 /* Pods_RxSwiftPractices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C0AC4937112B0886B4744D /* Pods_RxSwiftPractices.framework */; };
 		BBA5ABE326B69A6600E0BA5F /* MarvelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA5ABE226B69A6600E0BA5F /* MarvelProvider.swift */; };
+		BBAF96EE26FF5231006B7912 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF96ED26FF5231006B7912 /* ButtonCell.swift */; };
 		BBB37C7D26EDD3900046E34A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB37C7C26EDD3900046E34A /* MainViewController.swift */; };
 		BBB37C7F26EDD9C60046E34A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB37C7E26EDD9C60046E34A /* CharactersViewController.swift */; };
 		BBB37C8226EDF94F0046E34A /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB37C8126EDF94F0046E34A /* CharacterCell.swift */; };
@@ -25,6 +26,7 @@
 		BBE1634226B048E4004FE42E /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634126B048E4004FE42E /* MarvelCharacter.swift */; };
 		BBE1634726B04EAB004FE42E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1634626B04EAB004FE42E /* MainViewModel.swift */; };
 		BBE6239726AC0B10002D5AB1 /* OneCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6239626AC0B10002D5AB1 /* OneCharacterViewController.swift */; };
+		DFCF08DB26FDB1840073E593 /* IndexedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF08DA26FDB1840073E593 /* IndexedScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		74C0AC4937112B0886B4744D /* Pods_RxSwiftPractices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPractices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CF8E5BC6C36466C53AD66F /* Pods-RxSwiftPractices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractices.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractices/Pods-RxSwiftPractices.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA5ABE226B69A6600E0BA5F /* MarvelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelProvider.swift; sourceTree = "<group>"; };
+		BBAF96ED26FF5231006B7912 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		BBB37C7C26EDD3900046E34A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BBB37C7E26EDD9C60046E34A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		BBB37C8126EDF94F0046E34A /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		BBE1634126B048E4004FE42E /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
 		BBE1634626B04EAB004FE42E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BBE6239626AC0B10002D5AB1 /* OneCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCharacterViewController.swift; sourceTree = "<group>"; };
+		DFCF08DA26FDB1840073E593 /* IndexedScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				BBB37C8126EDF94F0046E34A /* CharacterCell.swift */,
+				BBAF96ED26FF5231006B7912 /* ButtonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				BBB37C7C26EDD3900046E34A /* MainViewController.swift */,
 				BBE6239626AC0B10002D5AB1 /* OneCharacterViewController.swift */,
 				BBB37C7E26EDD9C60046E34A /* CharactersViewController.swift */,
+				DFCF08DA26FDB1840073E593 /* IndexedScrollViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,8 +296,10 @@
 				BBB37C7D26EDD3900046E34A /* MainViewController.swift in Sources */,
 				BBC1FD2926AC07DE00088491 /* AppDelegate.swift in Sources */,
 				BBDE8F2026D52151006B3407 /* DigestExtension.swift in Sources */,
+				DFCF08DB26FDB1840073E593 /* IndexedScrollViewController.swift in Sources */,
 				BBE1634226B048E4004FE42E /* MarvelCharacter.swift in Sources */,
 				BBA5ABE326B69A6600E0BA5F /* MarvelProvider.swift in Sources */,
+				BBAF96EE26FF5231006B7912 /* ButtonCell.swift in Sources */,
 				BBC1FD2B26AC07DE00088491 /* SceneDelegate.swift in Sources */,
 				BBC1FD3326AC07DE00088491 /* RxSwift.xcdatamodeld in Sources */,
 				BBB37C8426EE33E50046E34A /* CharactersViewModel.swift in Sources */,
@@ -453,6 +461,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Aiden.RxSwiftPractices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -472,6 +481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Aiden.RxSwiftPractices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
